@@ -1,11 +1,10 @@
-# Melissa Frye Student_ID#: 001260546
 import csv
 
 
 # This class creates a chaining hash table to store all packages. Contains a hash table constructor, with methods to
 # add, remove, and search methods. If a collision occurs, the newly added item will be added to the bucket's list (
 # chaining) and when a search is performed the bucket will be found and the list iterated through.
-# O(n) time complexity (line 14, for i in range(initial_buckets)).
+# O(n) time complexity (for i in range(initial_buckets)).
 class ChainHashTable:
     # hash table constructor, with optional initial capacity, assigns each bucket an empty list. 39 was chosen in this
     # case as the default initial bucket number because that's the number of packages assigned but also accommodates
@@ -33,7 +32,7 @@ class ChainHashTable:
         return True
 
     # Search hash table using 'key' as search parameter. If found, the item is returned. If not, None is returned.
-    # O(n) time complexity, for kv in bucket_list:, line 41
+    # O(n) time complexity, for kv in bucket_list:
     def search(self, key):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]
